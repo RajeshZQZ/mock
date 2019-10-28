@@ -25,8 +25,8 @@
 	    if (!method_exists($obj, $_REQUEST['st'])) {
 	       die('错误，方法不存在');
 	    }
-	  $function = $_REQUEST['st'];
-	  $obj->$function();
+	  $func = $_REQUEST['st'];
+	  $obj->$func();
 	}
 
 
