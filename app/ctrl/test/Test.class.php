@@ -4,7 +4,7 @@
 class Test
 {
 
-    private static $base_url = 'http://47.98.188.59/game01/mock/test/?act=Test&st=call_back';
+    private static $base_url = 'http://47.98.188.59/game01/mock/?act=test_Test&st=call_back';
     private static $mid = 938;
     public static $token = 'cc47e8894d43f260e143d70994267946';
 
