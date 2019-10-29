@@ -7,7 +7,7 @@
      */
     function import($className)
     {
-//echo "import_classname:".$className."</br>";
+        echo "import_classname:".$className."</br>";
         $path = array();
         $pathDir = '';
         $path = explode('_', $className);
@@ -16,6 +16,7 @@
         $filename = APP_DIR.$pathDir.'.class.php';
         echo "filename:".$filename."</br>";
         if (file_exists($filename)){
-	  require $filename;
+            var_dump(file_exists($filename));
+	        require $filename;
         }
     }
