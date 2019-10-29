@@ -20,7 +20,7 @@ class test
             'version' => '2.0',
             'sign' => "800ad0b15fac87393a1e445718642a94",
         ];
-
+        echo "start";
         $res = CurlHelp::curlGet(self::$base_url, $params);
         // echo "<br>==========00===============<br>";
         print_r($res);
