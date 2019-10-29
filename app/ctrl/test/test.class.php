@@ -1,7 +1,7 @@
 <?php
 
 
-class Test
+class test
 {
 
     private static $base_url = 'http://47.98.188.59/game01/mock/?act=test_Test&st=call_back';
