@@ -7,7 +7,7 @@
      */
     function import($className)
     {
-        echo "import_classname:".$className."</br>";
+        //echo "import_classname:".$className."</br>";
         $path = array();
         $pathDir = '';
         $path = explode('_', $className);
