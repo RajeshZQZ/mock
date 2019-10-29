@@ -12,7 +12,7 @@
         }
 
     	$className = 'ctrl_' . $_REQUEST['act']; /* 类名 */
-//echo 'doaction_classname:'.$className."</br>";
+     echo 'doAction_className:'.$className."</br>";
      if (!class_exists($className)){
     	die('not this class');
       }

@@ -21,14 +21,14 @@ class Test
             'sign' => "800ad0b15fac87393a1e445718642a94",
         ];
 
-        $res = self::curlGet(self::$base_url, $params);
+        $res = CurlHelp::curlGet(self::$base_url, $params);
         // echo "<br>==========00===============<br>";
         print_r($res);
         // echo "<br>==========01===============<br>";
         //		// echo json_encode($res,JSON_UNESCAPED_UNICODE);
 
         $prize_lists = CurlHelp::printNx($res, ['data', 'prize_lists'], []);
-        if (empty($prize_lists)) throw new UserException('有效数据为空~！');
+        if (empty($prize_lists)) echo ('有效数据为空~！');
 
         foreach ($prize_lists as $v) {
             $data['prize_id'] = $v['prize_id'];
