@@ -21,8 +21,8 @@ class ctrl_test_api
             'sign' => "800ad0b15fac87393a1e445718642a94",
         ];
         echo "start";
-        $res = CurlHelp::curlGet(self::$base_url, $params);
-        // echo "<br>==========00===============<br>";
+        $res = common_curl_help::curlGet(self::$base_url, $params);
+        echo "<br>==========00===============<br>";
         print_r($res);
         // echo "<br>==========01===============<br>";
         //		// echo json_encode($res,JSON_UNESCAPED_UNICODE);
