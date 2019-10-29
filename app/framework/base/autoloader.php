@@ -17,6 +17,6 @@
         echo "fileName:".$filename."</br>";
         if (file_exists($filename)){
             var_dump(file_exists($filename));
-	        require $filename;
+	        include ($filename);
         }
     }
