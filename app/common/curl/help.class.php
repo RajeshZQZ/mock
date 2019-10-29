@@ -30,7 +30,11 @@ class common_curl_help{
 	{
 	    if($param){
 	        $querystring = http_build_query($param);
-	        $url = $url.'?'.$querystring;
+            if(strpos($url,"?act")!==false){
+                $url = $url.'&'.$querystring;
+            }else{
+                $url = $url.'?'.$querystring;
+            }
 	    }
 	    //初始化
 	    $ch = curl_init();

@@ -4,7 +4,7 @@
 class ctrl_test_api
 {
 
-    private static $base_url = 'http://47.98.188.59/game01/mock/?act=test_test&st=call_back';
+    private static $base_url = 'http://47.98.188.59/game01/mock/?act=test_api&st=call_back';
     private static $mid = 938;
     public static $token = 'cc47e8894d43f260e143d70994267946';
 
@@ -12,7 +12,7 @@ class ctrl_test_api
     public function call(){
 
         $params = [
-            'act' => 'fast_reg_utoken',
+            'acts' => 'fast_reg_utoken',
             'act_type' => 1,
             'mid' => 938,
             'resource_id' => 49,
@@ -27,7 +27,7 @@ class ctrl_test_api
         // echo "<br>==========01===============<br>";
         //		// echo json_encode($res,JSON_UNESCAPED_UNICODE);
 
-        $prize_lists = CurlHelp::printNx($res, ['data', 'prize_lists'], []);
+        $prize_lists = common_curl_help::printNx($res, ['data', 'prize_lists'], []);
         if (empty($prize_lists)) echo ('有效数据为空~！');
 
         foreach ($prize_lists as $v) {
