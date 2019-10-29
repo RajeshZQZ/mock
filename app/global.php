@@ -13,9 +13,10 @@
 
     	$className = 'ctrl_' . $_REQUEST['act']; /* 类名 */
      echo 'doAction_className:'.$className."</br>";
-     if (!class_exists($className)){
-    	die('not this class');
-      }
+     $test_bool = class_exists($className);
+//     if (!class_exists($className)){
+//    	die('not this class');
+//      }
        $obj = new $className();
 	runAction($obj);
   }

@@ -16,7 +16,7 @@
         $filename = APP_DIR.$pathDir.'.class.php';
         echo "fileName:".$filename."</br>";
         if (file_exists($filename)){
-            var_dump(file_exists($filename));
-	        include ($filename);
+           // var_dump(file_exists($filename));
+	        require $filename;
         }
     }
