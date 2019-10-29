@@ -14,9 +14,8 @@
         $arrCount = count($path);
         $pathDir = implode('/', array_slice($path, 0, $arrCount));
         $filename = APP_DIR.$pathDir.'.class.php';
-        echo "fileName:".$filename."</br>";
+        //echo "fileName:".$filename."</br>";
         if (file_exists($filename)){
-           // var_dump(file_exists($filename));
 	        require $filename;
         }
     }

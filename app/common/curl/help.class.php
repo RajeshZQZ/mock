@@ -1,6 +1,6 @@
 <?php
 
-class CurlHelp{
+class common_curl_help{
 
 	//连接超时
 	private static $connect_timeout = 20;
@@ -49,7 +49,6 @@ class CurlHelp{
 	//post调用第三方接口:
     public static function cURLHTTPPost($url, $post_data, $timeout = 3, $host = '', $header_append = array(), $failOnError = true)
     {
-        // self::clearError();
         if (is_array($post_data)) {//$post_data为数组时，即上传文件时
             $data_len = count($post_data);
             $header = array();

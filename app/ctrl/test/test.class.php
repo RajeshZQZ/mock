@@ -1,7 +1,7 @@
 <?php
 
 
-class test
+class ctrl_test_api
 {
 
     private static $base_url = 'http://47.98.188.59/game01/mock/?act=test_test&st=call_back';
