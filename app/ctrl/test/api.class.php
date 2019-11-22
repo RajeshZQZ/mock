@@ -10,7 +10,7 @@ class ctrl_test_api
 
     //test
     public function call(){
-
+        echo "01:call=====<br>";
         $params = [
             'acts' => 'fast_reg_utoken',
             'act_type' => 1,
@@ -20,7 +20,8 @@ class ctrl_test_api
             'version' => '2.0',
             'sign' => "800ad0b15fac87393a1e445718642a94",
         ];
-        echo "start";
+        echo "02:call=========<br>";
+        var_dump($params);
         $res = common_curl_help::curlGet(self::$base_url, $params);
         echo "<br>==========00===============<br>";
         print_r($res);
