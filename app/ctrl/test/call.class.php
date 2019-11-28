@@ -45,4 +45,45 @@ class ctrl_test_call
 
     }
 
+    function curl(){
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://test-task.handtoutiao.com/user/login",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "sign=4C2E68D3A547445CB34391D095752D4E&timestamp=1574327829&phone=17612119533&verify_code=463198&ali_device_token=",
+            CURLOPT_HTTPHEADER => array(
+                "Accept: */*",
+                "Accept-Encoding: gzip, deflate",
+                "Accept-Language: zh-Hans-CN;q=1",
+                'Appinfo: {"net_type":"wifi","market":"appStore","idfa":"49FD70BF-6CEF-43AE-9A4F-A592D4E5670","source":"1","os":"ios","platform":"iPhone9,2","ver":"2.0.0","device_id":"2486aaaaaaaaaaaaaaabbbbbbbbbb","os_ver":"12.3.1","device":"iPhone 7 Plus","os_type":"ios","name":"mmjz"}',
+                "Cache-Control: no-cache",
+                "Connection: keep-alive",
+                "Content-Length: 113",
+                "Content-Type: application/x-www-form-urlencoded",
+                "Cookie: _csrf=9b7ffe5dd9512de78a931b4025b8c0962ab20b87e9c2d670ef18c1f81afe9e0ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vN7e-UCFeoLwcSv4X8ClC-f2qv0XDdEq%22%3B%7D",
+                "Host: test-task.handtoutiao.com",
+                "Postman-Token: a5f09dc5-321c-49cc-831d-0c6f47cb6f8b,fabebcbd-1995-49a5-8b02-6ee9798ca834",
+                "User-Agent: kdxj/2.0.0",
+                "cache-control: no-cache"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
+    }
 }
