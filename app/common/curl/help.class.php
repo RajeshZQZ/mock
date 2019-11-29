@@ -28,28 +28,26 @@ class common_curl_help{
 	//get调用接口：
 	public static function curlGet($url ,$param = [] ,$timeout = 2 , $json = true)
 	{
-//	    echo "03:call_curlGet========<br>";
 	    if(!empty($url)){
             //先生成接口http——url：
             $url = self::generalHttpUrl($url,$param);
-       // echo "05：call_curlget========<br>".$url."<br>";
             //初始化
             $ch = curl_init();
             // 请求头，可以传数组
-//            curl_setopt($ch, CURLOPT_URL,$url);
-//            curl_setopt($ch, CURLOPT_HEADER, false);
-//            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  // 执行后不直接打印出来
-//            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查
-//            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // 不从证书中检查SSL加密算法是否存在
-//            curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
-            $options = array(CURLOPT_URL => $url,
-            CURLOPT_HEADER => false,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_TIMEOUT => $timeout
-            );
-            curl_setopt_array($ch,$options);
+            curl_setopt($ch, CURLOPT_URL,$url);
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  // 执行后不直接打印出来
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // 不从证书中检查SSL加密算法是否存在
+            curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+//            $options = array(CURLOPT_URL => $url,
+//            CURLOPT_HEADER => false,
+//            CURLOPT_RETURNTRANSFER => true,
+//            CURLOPT_SSL_VERIFYPEER => false,
+//            CURLOPT_SSL_VERIFYHOST => false,
+//            CURLOPT_TIMEOUT => $timeout
+//            );
+//            curl_setopt_array($ch,$options);
 
             $output = curl_exec($ch); //执行并获取HTML文档内容
             curl_close($ch); //释放curl句柄
@@ -62,7 +60,7 @@ class common_curl_help{
 
     //生成http请求地址
     public static function generalHttpUrl($base_url,$params){
-	    echo "04:call_CurlGet_general<br>";
+	    //echo "04:call_CurlGet_general<br>";
         $url_array = parse_url($base_url);
         if ($url_array){
             if(empty($params)){
